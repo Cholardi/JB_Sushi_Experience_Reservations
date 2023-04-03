@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon" />
 
         <!-- Css Style -->
         <link rel="stylesheet" href="style.css" />
@@ -31,93 +31,155 @@
     </head>
     <body>
         <header>
-            <img src="/imgs/logo.png" alt="Logo de JB Sushi Experience" />
+            <img src="imgs/logo.png" alt="Logo de JB Sushi Experience" />
         </header>
 
         <main>
-            <form action="https://formspree.io/f/xdovwkvd" method="POST">
-                <div class="form-pag1">
-                    <h2>Datos de la reserva</h2>
-                    <label for="opcion">Tipo de experiencia:</label>
-                    <select id="opcion" name="opcion">
-                        <option value="Mesa Comun">Mesa Común - $8000</option>
-                        <option value="Barra Premium">Barra Premium - $10000</option>
-                    </select>
+            <div class="form-container">
+                <form action="https://formspree.io/f/xdovwkvd" method="POST" data-multi-step>
+                    <div class="form-page pag1" data-step>
+                        <div class="form-titles">
+                            <h2>JB Sushi Experience x Fermentador</h2>
+                            <h3>DOMINGO 30/04</h3>
+                        </div>
+                        <label for="mesa">Tipo de experiencia:</label>
+                        <select id="mesa" name="mesa">
+                            <option value="Mesa Comun">Mesa Común - $8000</option>
+                            <option value="Barra Premium">Barra Premium - $10000</option>
+                        </select>
 
-                    <label for="comensales">Cantidad de comensales:</label>
-                    <input type="number" id="comensales" name="comensales" />
+                        <label for="hora">Horario de la reserva:</label>
+                        <select id="hora" name="hora">
+                            <option value="20:30">20:30</option>
+                            <option value="20:45">20:45</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:15">21:15</option>
+                            <option value="21:30">21:30</option>
+                            <option value="21:45">21:45</option>
+                            <option value="22:00">22:00</option>
+                            <option value="22:15">22:15</option>
+                            <option value="22:30">22:30</option>
+                            <option value="22:45">22:45</option>
+                            <option value="23:00">23:00</option>
+                        </select>
 
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required />
+                        <!-- <div class="counter">
+                            <button type="button" class="counter-btn counter-down">-</button>
+                            <input type="number" class="counter-input" min="1" max="30" value="1" />
+                            <button type="button" class="counter-btn counter-up">+</button>
+                        </div>
 
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" required />
+                        <input type="number" id="comensales" name="comensales" placeholder="Cantidad de comensales:" /> -->
 
-                    <label for="correo">Correo electrónico:</label>
-                    <input type="email" id="correo" name="correo" required />
+                        <label for="comensales">Cantidad de comensales:</label>
+                        <select id="comensales" name="comensales">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
 
-                    <label for="telefono">Número de teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required />
-
-                    <div class="button-box">
-                        <button type="button" class="btn">Siguiente</button>
+                        <div class="button-box">
+                            <button type="button" class="btn" data-next>Siguiente</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-pag2">
-                    <h2>Personalizá tu experiencia</h2>
-                    <h3>COMENSAL 1</h3>
+                    <div class="form-page pag2" data-step>
+                        <h2 class="form-titles">Datos de la reserva</h2>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
 
-                    <label for="opcion">Elegí una entrada:</label>
-                    <select id="opcion" name="opcion">
-                        <option value="1">Opción 1</option>
-                        <option value="2">Opción 2</option>
-                        <option value="3">Opción 3</option>
-                    </select>
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required />
 
-                    <label for="opcion">Plato principal:</label>
-                    <select id="opcion" name="opcion">
-                        <option value="1">Opción 1</option>
-                    </select>
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required />
 
-                    <label for="opcion">Elegí un postre:</label>
-                    <select id="opcion" name="opcion">
-                        <option value="1">Opción 1</option>
-                        <option value="2">Opción 2</option>
-                        <option value="3">Opción 3</option>
-                    </select>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required />
 
-                    <label for="requerimientos">Seleccioná en caso que aplique: </label>
-                    <div class="checkboxes">
-                        <label for="requerimientos">Vegano/a</label>
-                        <input type="checkbox" id="vegano" name="vegano" value="sí" />
-                        <label for="requerimientos">Vegetariano/a</label>
-                        <input type="checkbox" id="vegano" name="vegano" value="sí" />
-                        <label for="requerimientos">Celíaco/a</label>
-                        <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                        <div class="button-box">
+                            <button type="button" class="btn" data-previous>Atrás</button>
+                            <button type="button" class="btn" data-next>Siguiente</button>
+                        </div>
                     </div>
 
-                    <label for="otros requerimientos">Otras aclaraciones:</label>
-                    <textarea id="otros requerimientos" name="otros requerimientos" cols="30" rows="10"></textarea>
-                    <div class="button-box">
-                        <button type="button" class="btn">Atrás</button>
-                        <button type="button" class="btn">Siguiente</button>
-                    </div>
-                </div>
+                    <div class="form-page pag3" data-step>
+                        <div class="form-titles">
+                            <h2>Personalizá tu experiencia</h2>
+                            <h3>COMENSAL 1</h3>
+                        </div>
 
-                <div class="form-pag3">
-                    <p>Cantidad de comensales: x</p>
-                    <p>Tipo de experiencia: x</p>
-                    <p>Monto total a pagar: x</p>
-                    <p>
-                        La totalidad de la reserva deberá ser abonada de manera anticipada (dentro de los 5 días posteriores a la
-                        confirmación de la reserva). Nos contactaremos por WhatsApp para coordinar el pago.
-                    </p>
-                    <div class="button-box">
-                        <input type="submit" class="btn" value="Finalizar Reserva" />
+                        <label for="opcion">Elegí una entrada:</label>
+                        <select id="opcion" name="opcion">
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                        </select>
+
+                        <label for="opcion">Plato principal:</label>
+                        <select id="opcion" name="opcion">
+                            <option value="1">Opción 1</option>
+                        </select>
+
+                        <label for="opcion">Elegí un postre:</label>
+                        <select id="opcion" name="opcion">
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                        </select>
+
+                        <label for="requerimientos">Seleccioná en caso que aplique: </label>
+                        <div class="checkboxes">
+                            <div class="checkbox-option">
+                                <label for="requerimientos">Vegano/a</label>
+                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="requerimientos">Vegetariano/a</label>
+                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                            </div>
+                            <div class="checkbox-option">
+                                <label for="requerimientos">Celíaco/a</label>
+                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                            </div>
+                        </div>
+
+                        <label for="otros requerimientos">Otras aclaraciones:</label>
+                        <textarea id="otros requerimientos" name="otros requerimientos"></textarea>
+                        <div class="button-box">
+                            <button type="button" class="btn" data-previous>Atrás</button>
+                            <button type="button" class="btn" data-next>Siguiente</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+
+                    <div class="form-page pag4" data-step>
+                        <h2>Resumen</h2>
+                        <p>Cantidad de comensales: x</p>
+                        <p>Tipo de experiencia: x</p>
+                        <p>Monto total a pagar: x</p>
+                        <p>
+                            La totalidad de la reserva deberá ser abonada de manera anticipada (dentro de los 5 días posteriores a la
+                            confirmación de la reserva). Nos contactaremos por WhatsApp para coordinar el pago.
+                        </p>
+                        <div class="button-box">
+                            <button type="button" class="btn" data-previous>Atrás</button>
+                            <input type="submit" class="btn" value="Finalizar Reserva" />
+                        </div>
+                    </div>
+                </form>
+            </div>
         </main>
 
         <footer>
@@ -128,5 +190,7 @@
                 <a href="https://api.whatsapp.com/send?phone=5491136178130" target="_blank"><i class="bi bi-whatsapp"></i></a>
             </div>
         </footer>
+
+        <script src="main.js"></script>
     </body>
 </html>

@@ -44,8 +44,8 @@
                         </div>
                         <label for="mesa">Tipo de experiencia:</label>
                         <select id="mesa" name="mesa">
-                            <option value="Mesa Comun">Mesa Común - $8000</option>
-                            <option value="Barra Premium">Barra Premium - $10000</option>
+                            <option value="mesa-comun" data-price="8000">Mesa Común - $<span class="price">8000</span></option>
+                            <option value="barra-premium" data-price="10000">Barra Premium - $<span class="price">10000</span></option>
                         </select>
 
                         <label for="hora">Horario de la reserva:</label>
@@ -95,7 +95,7 @@
                         </select>
 
                         <div class="button-box">
-                            <button type="button" class="btn" data-next>Siguiente</button>
+                            <button type="button" id="first-next-btn" class="btn" data-next>Siguiente</button>
                         </div>
                     </div>
 
@@ -117,42 +117,42 @@
 
                     <div class="form-page pag3" data-step>
                         <div class="form-titles">
-                            <h2>Personalizá tu experiencia</h2>
-                            <h3>COMENSAL 1</h3>
+                            <h2>COMENSAL 1</h2>
+                            <h3>Personalizá tu experiencia</h3>
                         </div>
 
-                        <label for="opcion">Elegí una entrada:</label>
-                        <select id="opcion" name="opcion">
+                        <label for="entrada">Elegí una entrada:</label>
+                        <select id="entrada" name="entrada">
                             <option value="1">Opción 1</option>
                             <option value="2">Opción 2</option>
                             <option value="3">Opción 3</option>
                         </select>
 
-                        <label for="opcion">Plato principal:</label>
-                        <select id="opcion" name="opcion">
+                        <label for="principal">Plato principal:</label>
+                        <select id="principal" name="principal">
                             <option value="1">Opción 1</option>
                         </select>
 
-                        <label for="opcion">Elegí un postre:</label>
-                        <select id="opcion" name="opcion">
+                        <label for="postre">Elegí un postre:</label>
+                        <select id="postre" name="postre">
                             <option value="1">Opción 1</option>
                             <option value="2">Opción 2</option>
                             <option value="3">Opción 3</option>
                         </select>
 
-                        <label for="requerimientos">Seleccioná en caso que aplique: </label>
-                        <div class="checkboxes">
+                        <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
+                        <div class="checkboxes-requerimientos">
                             <div class="checkbox-option">
-                                <label for="requerimientos">Vegano/a</label>
-                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                                <label for="vegano">Vegano/a</label>
+                                <input type="checkbox" id="vegano" name="vegano" value="vegano" />
                             </div>
                             <div class="checkbox-option">
-                                <label for="requerimientos">Vegetariano/a</label>
-                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                                <label for="vegetariano">Vegetariano/a</label>
+                                <input type="checkbox" id="vegetariano" name="vegetariano" value="vegetariano" />
                             </div>
                             <div class="checkbox-option">
-                                <label for="requerimientos">Celíaco/a</label>
-                                <input type="checkbox" id="vegano" name="vegano" value="sí" />
+                                <label for="celiaco">Celíaco/a</label>
+                                <input type="checkbox" id="celiaco" name="celiaco" value="celiaco" />
                             </div>
                         </div>
 
@@ -166,9 +166,12 @@
 
                     <div class="form-page pag4" data-step>
                         <h2>Resumen</h2>
-                        <p>Cantidad de comensales: x</p>
-                        <p>Tipo de experiencia: x</p>
-                        <p>Monto total a pagar: x</p>
+                        <p>Fecha del Evento: Domingo 30/04</p>
+                        <p>Horario de la reserva: <span id="horario-reserva"></span></p>
+                        <p>Cantidad de comensales: <span id="cant-comensales-review"></span></p>
+                        <p>Tipo de experiencia: <span id="tipo-experiencia-review"></span></p>
+                        <p>Monto total a pagar: <span id="total-due-review"></span></p>
+                        <input type="hidden" id="total-due" name="total-a-pagar" value="">
                         <p>
                             La totalidad de la reserva deberá ser abonada de manera anticipada (dentro de los 5 días posteriores a la
                             confirmación de la reserva). Nos contactaremos por WhatsApp para coordinar el pago.
@@ -183,7 +186,7 @@
         </main>
 
         <footer>
-            <p>Contactanos en <a href="mailto:contacto@jbsushiexperience.com">contacto@jbsushiexperience.com</a></p>
+            <p>Contactanos en <a href="mailto:contacto@jbsushiexperience.com">jb_sushi@hotmail.com</a></p>
 
             <div class="media-link-icons">
                 <a href="https://www.instagram.com/jb_sushi/" target="_blank"><i class="bi bi-instagram"></i></a>

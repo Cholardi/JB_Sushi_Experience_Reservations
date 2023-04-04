@@ -34,7 +34,7 @@ header img {
 
 /* Form styles */
 main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/imgs/background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imgs/background.jpg);
     background-position: center;
     background-size: cover;
     padding: 20px;
@@ -104,7 +104,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-select, textarea, .checkboxes {
+select, textarea, .checkboxes-requerimientos {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -117,7 +117,7 @@ select, textarea, .checkboxes {
     resize: none;
 }
 
-.checkboxes {
+.checkboxes-requerimientos {
     display: flex;
     justify-content: space-around;
     text-align: center;

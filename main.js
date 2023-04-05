@@ -46,7 +46,7 @@ comensalesSelect.addEventListener("change", () => {
         newPage.dataset.step = "";
         newPage.innerHTML = `
                         <div class="form-titles">
-                            <h2>COMENSAL ${i}</h2>
+                            <h2 class="comensal_num">COMENSAL ${i}</h2>
                             <h3>Personalizá tu experiencia</h3>
                         </div>
 
@@ -89,8 +89,14 @@ comensalesSelect.addEventListener("change", () => {
                         <textarea id="otros-requerimientos" name="otros-requerimientos_${i}"></textarea>
 
                         <div class="button-box">
-                            <button type="button" class="btn" data-previous>Atrás</button>
-                            <button type="button" class="btn" data-next>Siguiente</button>
+                            <button type="button" class="btn btn-back" data-previous>
+                                <i class="bi bi-arrow-left-circle"></i>
+                                <span class="btn-text">Atrás</span>
+                            </button>
+                            <button type="button" class="btn btn-next" data-next>
+                                <span class="btn-text">Siguiente</span>
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
     `;
         multiStepForm.insertBefore(newPage, multiStepForm.lastElementChild);

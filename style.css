@@ -6,11 +6,13 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 /* Header styles */
 header {
     position: relative;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +40,10 @@ main {
     background-position: center;
     background-size: cover;
     padding: 20px;
-    height: 100vh;
+    min-height: calc(100% - 344px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-container {
@@ -47,12 +52,13 @@ main {
     /* justify-content: center; */
 }
 
-.form-page{
+.form-page {
     /* height: 500px; */
     padding: 30px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 500px;
+    /* width: 75%; */
     margin: 0 auto;
     border-radius: 6px;
     color: #333;
@@ -62,12 +68,12 @@ main {
     /* animation: fade 150ms ease-in-out forwards; */
 }
 
-.form-page.active{
+.form-page.active {
     display: block;
     /* animation: slide 150ms 75ms ease-in-out both; */
 }
 
-.form-titles{
+.form-titles {
     text-align: center;
     line-height: 1.5;
     margin-bottom: 25px;
@@ -85,10 +91,15 @@ main {
     display: none;
 } */
 
-h2, h3 {
+h2,
+h3 {
     text-align: center;
     text-transform: uppercase;
     margin: 0;
+}
+
+.comensal_num {
+    font-size: 30px;
 }
 
 label {
@@ -96,15 +107,16 @@ label {
     margin-bottom: 10px;
     font-weight: bold;
     /* text-transform: uppercase; */
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     font-size: 14px;
-
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-select, textarea, .checkboxes-requerimientos {
+select,
+textarea,
+.checkboxes-requerimientos {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -123,37 +135,75 @@ select, textarea, .checkboxes-requerimientos {
     text-align: center;
 }
 
-.button-box {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    flex-wrap: wrap;
+.checkbox-option > label{
+    font-size: 10px;
 }
 
-input[type="submit"],
+.checkbox{
+
+}
+
+.button-box {
+    display: flex;
+    justify-content: space-around;
+    /* margin: 10px; */
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.button-box button i,
+.button-box button span {
+    pointer-events: none;
+}
+
 .btn {
-    display: block;
+    cursor: pointer;
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: end;
-    letter-spacing: 2px;
-    cursor: pointer;
+    text-align: center;
+    /* letter-spacing: 2px; */
+    /* padding: 10px 20px; */
+    padding: 4px;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
     transition: all 0.2s ease;
 }
 
-input[type="submit"],
 .btn:hover {
     background-color: #555555;
 }
 
+.btn > i {
+    /* font-size: 22px; */
+    font-size: 26px;
+    height: 26px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+    vertical-align: 0;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-text {
+    display: none;
+}
+
 /* Footer styles */
 footer {
+    height: 94px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -165,7 +215,7 @@ footer {
 }
 
 footer p {
-    margin: 0 0 10px ;
+    margin: 0 0 10px;
     padding: 5px;
 }
 
@@ -173,7 +223,7 @@ footer a {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
 }
 
 footer a:hover {
@@ -184,7 +234,7 @@ footer a:hover {
     margin: 0 10px;
 }
 
-.bi {
+footer .bi {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -197,12 +247,10 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-.bi:hover {
+footer .bi:hover {
     color: #fff;
     background-color: #333;
 }
-
-
 
 /* 
 @keyframes slide {
@@ -270,3 +318,37 @@ footer a:hover {
     width: 50px;
   }
    */
+
+@media screen and (min-width: 520px) {
+    .btn {
+        letter-spacing: 2px;
+        padding: 10px 20px;
+    }
+
+    .btn > i {
+        font-size: 22px;
+        height: auto;
+    }
+
+    .btn-text {
+        display: block;
+    }
+
+    .bi::before,
+    [class^="bi-"]::before,
+    [class*=" bi-"]::before {
+        vertical-align: -0.125em;
+    }
+
+    .btn-next:hover i {
+        transform: translateX(5px);
+    }
+    
+    .btn-back:hover i {
+        transform: translateX(-5px);
+    }
+
+    .checkbox-option > label{
+        font-size: 13px;
+    }
+}

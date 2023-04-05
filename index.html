@@ -95,7 +95,10 @@
                         </select>
 
                         <div class="button-box">
-                            <button type="button" id="first-next-btn" class="btn" data-next>Siguiente</button>
+                            <button type="button" id="first-next-btn" class="btn btn-next" data-next>
+                                <span class="btn-text">Siguiente</span>
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -110,14 +113,20 @@
                         <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required />
 
                         <div class="button-box">
-                            <button type="button" class="btn" data-previous>Atrás</button>
-                            <button type="button" class="btn" data-next>Siguiente</button>
+                            <button type="button" class="btn btn-back" data-previous>
+                                <i class="bi bi-arrow-left-circle"></i>
+                                <span class="btn-text">Atrás</span>
+                            </button>
+                            <button type="button" class="btn btn-next" data-next>
+                                <span class="btn-text">Siguiente</span>
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
                     </div>
 
                     <div class="form-page pag3" data-step>
                         <div class="form-titles">
-                            <h2>COMENSAL 1</h2>
+                            <h2 class="comensal_num">COMENSAL 1</h2>
                             <h3>Personalizá tu experiencia</h3>
                         </div>
 
@@ -144,23 +153,29 @@
                         <div class="checkboxes-requerimientos">
                             <div class="checkbox-option">
                                 <label for="vegano">Vegano/a</label>
-                                <input type="checkbox" id="vegano" name="vegano" value="vegano" />
+                                <input type="checkbox" id="vegano" class="checkbox" name="vegano" value="vegano" />
                             </div>
                             <div class="checkbox-option">
                                 <label for="vegetariano">Vegetariano/a</label>
-                                <input type="checkbox" id="vegetariano" name="vegetariano" value="vegetariano" />
+                                <input type="checkbox" id="vegetariano" class="checkbox" name="vegetariano" value="vegetariano" />
                             </div>
                             <div class="checkbox-option">
                                 <label for="celiaco">Celíaco/a</label>
-                                <input type="checkbox" id="celiaco" name="celiaco" value="celiaco" />
+                                <input type="checkbox" id="celiaco" class="checkbox" name="celiaco" value="celiaco" />
                             </div>
                         </div>
 
                         <label for="otros requerimientos">Otras aclaraciones:</label>
                         <textarea id="otros requerimientos" name="otros requerimientos"></textarea>
                         <div class="button-box">
-                            <button type="button" class="btn" data-previous>Atrás</button>
-                            <button type="button" class="btn" data-next>Siguiente</button>
+                            <button type="button" class="btn btn-back" data-previous>
+                                <i class="bi bi-arrow-left-circle"></i>
+                                <span class="btn-text">Atrás</span>
+                            </button>
+                            <button type="button" class="btn btn-next" data-next>
+                                <span class="btn-text">Siguiente</span>
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -171,13 +186,16 @@
                         <p>Cantidad de comensales: <span id="cant-comensales-review"></span></p>
                         <p>Tipo de experiencia: <span id="tipo-experiencia-review"></span></p>
                         <p>Monto total a pagar: <span id="total-due-review"></span></p>
-                        <input type="hidden" id="total-due" name="total-a-pagar" value="">
+                        <input type="hidden" id="total-due" name="total-a-pagar" value="" />
                         <p>
                             La totalidad de la reserva deberá ser abonada de manera anticipada (dentro de los 5 días posteriores a la
                             confirmación de la reserva). Nos contactaremos por WhatsApp para coordinar el pago.
                         </p>
                         <div class="button-box">
-                            <button type="button" class="btn" data-previous>Atrás</button>
+                            <button type="button" class="btn btn-back" data-previous>
+                                <i class="bi bi-arrow-left-circle"></i>
+                                <span class="btn-text">Atrás</span>
+                            </button>
                             <input type="submit" class="btn" value="Finalizar Reserva" />
                         </div>
                     </div>

@@ -50,43 +50,51 @@ comensalesSelect.addEventListener("change", () => {
                             <h3>Personalizá tu experiencia</h3>
                         </div>
 
-                        <label for="entrada">Elegí una entrada:</label>
-                        <select id="entrada" name="entrada">
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
+                        <div class="personalizacion-menu">
+                            <div class="platos-area">
+                                <label for="entrada">Elegí una entrada:</label>
+                                <select id="entrada" name="entrada">
+                                    <option value="harumakis">Classic Harumakis</option>
+                                    <option value="harumakis_spicy">Harumakis & Spicy Hot Sauce (Picante)</option>
+                                    <option value="cazuela">Cazuela de Ceviche</option>
+                                </select>
 
-                        <label for="principal">Plato principal:</label>
-                        <select id="principal" name="principal">
-                            <option value="1">Opción 1</option>
-                        </select>
+                                <label for="principal">Plato principal:</label>
+                                <select id="principal" name="principal">
+                                    <option value="sushi">Sushi de Autor (16u.)</option>
+                                </select>
 
-                        <label for="postre">Elegí un postre:</label>
-                        <select id="postre" name="postre">
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
-
-                        <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
-                        <div class="checkboxes-requerimientos">
-                            <div class="checkbox-option">
-                                <label for="vegano">Vegano/a</label>
-                                <input type="checkbox" id="vegano" name="requerimientos_${i}" value="vegano" />
+                                <label for="postre">Elegí un postre:</label>
+                                <select id="postre" name="postre">
+                                    <option value="chocotorta">Chocotorta</option>
+                                    <option value="tiramisú">Tiramisú</option>
+                                    <option value="lincoln">Lincoln Pie</option>
+                                </select>
                             </div>
-                            <div class="checkbox-option">
-                                <label for="vegetariano">Vegetariano/a</label>
-                                <input type="checkbox" id="vegetariano" name="requerimientos_${i}" value="vegetariano" />
-                            </div>
-                            <div class="checkbox-option">
-                                <label for="celiaco">Celíaco/a</label>
-                                <input type="checkbox" id="celiaco" name="requerimientos_${i}" value="celiaco" />
+
+                            <div class="requerimientos-area">
+                                <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
+                                <div class="checkboxes-requerimientos">
+                                    <div class="checkbox-option">
+                                        <label for="vegano">Vegano/a</label>
+                                        <input type="checkbox" id="vegano" name="requerimientos_${i}" value="vegano" />
+                                    </div>
+                                    <div class="checkbox-option">
+                                        <label for="vegetariano">Vegetariano/a</label>
+                                        <input type="checkbox" id="vegetariano" name="requerimientos_${i}" value="vegetariano" />
+                                    </div>
+                                    <div class="checkbox-option">
+                                        <label for="celiaco">Celíaco/a</label>
+                                        <input type="checkbox" id="celiaco" name="requerimientos_${i}" value="celiaco" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="otros-requerimientos">Otras aclaraciones:</label>
+                                    <textarea id="otros-requerimientos" name="otros-requerimientos_${i}"></textarea>
+                                </div>
                             </div>
                         </div>
-
-                        <label for="otros-requerimientos">Otras aclaraciones:</label>
-                        <textarea id="otros-requerimientos" name="otros-requerimientos_${i}"></textarea>
 
                         <div class="button-box">
                             <button type="button" class="btn btn-back" data-previous>
@@ -153,13 +161,13 @@ function outputReview() {
     numComensales = comensalesSelect.value;
 const selectedOption = mesa.options[mesa.selectedIndex];
     expPrice = selectedOption.getAttribute("data-price");
-    expName = mesa.value;
+    expName = mesa.innerText;
     totalDue = numComensales * expPrice;
     horario = horarioReserva.value;
 
     horarioReservaReview.textContent = horario;
     cantComensalesReview.textContent = numComensales;
-    tipoExperienciaReview.textContent = `${expName} - Valor por persona: $${expPrice}`;
+    tipoExperienciaReview.textContent = `${expName} ($${expPrice}/persona)`;
     totalDueReview.textContent = `$${totalDue}`;
     totalDueSubmitted.value = `$${totalDue}`;
 }

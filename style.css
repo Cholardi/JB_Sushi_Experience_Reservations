@@ -39,7 +39,6 @@ main {
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(imgs/background.jpg);
     background-position: center;
     background-size: cover;
-    padding: 20px;
     min-height: calc(100% - 344px);
     display: flex;
     align-items: center;
@@ -47,9 +46,7 @@ main {
 }
 
 .form-container {
-    /* position: relative; */
-    /* display: flex; */
-    /* justify-content: center; */
+    padding: 25px;
 }
 
 .form-page {
@@ -57,20 +54,18 @@ main {
     padding: 30px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    /* width: 75%; */
+    max-width: 600px;
     margin: 0 auto;
-    border-radius: 6px;
+    border-radius: 10px;
     color: #333;
     line-height: 1.2;
-    /* position: absolute; */
     display: none;
-    /* animation: fade 150ms ease-in-out forwards; */
+    animation: fade 300ms ease-in-out forwards;
 }
 
 .form-page.active {
     display: block;
-    /* animation: slide 150ms 75ms ease-in-out both; */
+    animation: slide 300ms 150ms ease-in-out both;
 }
 
 .form-titles {
@@ -78,18 +73,6 @@ main {
     line-height: 1.5;
     margin-bottom: 25px;
 }
-
-/* .pag2{
-    display: none;
-}
-
-.pag3{
-    display: none;
-}
-
-.pag4{
-    display: none;
-} */
 
 h2,
 h3 {
@@ -135,20 +118,19 @@ textarea,
     text-align: center;
 }
 
-.checkbox-option > label{
+.checkbox-option > label {
     font-size: 10px;
 }
 
-.checkbox{
-
+.checkbox {
 }
 
 .button-box {
     display: flex;
     justify-content: space-around;
-    /* margin: 10px; */
+    margin-top: 7px;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 28px;
 }
 
 .button-box button i,
@@ -201,6 +183,27 @@ textarea,
     display: none;
 }
 
+.desc-formato-pago {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 30px 0;
+}
+
+.fecha-review span,
+.horario-review span,
+.comensales-review span,
+.experiencia-review span,
+.pagar-review span,
+.direccion-review span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.btn-last {
+    letter-spacing: 2px;
+    padding: 10px 20px;
+}
+
 /* Footer styles */
 footer {
     height: 94px;
@@ -226,10 +229,6 @@ footer a {
     letter-spacing: 0.5px;
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
-
 .media-link-icons a {
     margin: 0 10px;
 }
@@ -252,37 +251,33 @@ footer .bi:hover {
     background-color: #333;
 }
 
-/* 
 @keyframes slide {
     0% {
-      transform: translateX(200%);
-      opacity: 0;
+        transform: translateX(200%);
+        opacity: 0;
     }
     100% {
-      transform: translateX(0);
-      opacity: 1;
+        transform: translateX(0);
+        opacity: 1;
     }
-  }
-  
-  @keyframes fade {
+}
+
+@keyframes fade {
     0% {
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
     50% {
-      transform: scale(.75);
-      opacity: 0;
+        transform: scale(0.75);
+        opacity: 0;
     }
     100% {
-      opacity: 0;
-      transform: scale(0);
+        opacity: 0;
+        transform: scale(0);
     }
-  }
-  
+}
 
-
-
-
+/*
 .counter {
     display: flex;
     align-items: center;
@@ -343,12 +338,35 @@ footer .bi:hover {
     .btn-next:hover i {
         transform: translateX(5px);
     }
-    
+
     .btn-back:hover i {
         transform: translateX(-5px);
     }
 
-    .checkbox-option > label{
-        font-size: 13px;
+    .checkbox-option > label {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 820px) {
+    .personalizacion-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .platos-area {
+        width: 280px;
+        padding-right: 40px;
+        border-right: 1px solid #ddd;
+    }
+    .requerimientos-area {
+        width: 280px;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #otros-requerimientos {
+        height: 100px;
     }
 }

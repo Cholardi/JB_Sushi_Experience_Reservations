@@ -17,13 +17,13 @@
         <!-- Keywords -->
         <meta
             name="keywords"
-            content="JB Sushi Experience, JB Sushi, JB, Sushi, Sushi argentina, Sushi buenos aires, Sushi caba, Argentina, Buenos Aires, CABA, Experiencia, Eventos, Eventos de sushi, Catering de sushi, Sushi para eventos, Sushi para fiestas, Experiencias gastronómicas, Sushiman, Comida, Cultura"
+            content="JB Sushi Experience, JB Sushi, JB, Sushi, Sushi argentina, Sushi buenos aires, Sushi caba, Argentina, Buenos Aires, CABA, Experiencia, Eventos, Eventos de sushi, Catering de sushi, Sushi para eventos, Sushi para fiestas, Experiencias gastronómicas, Sushiman, Comida, Cultura, Semana Santa"
         />
 
         <!-- Description -->
         <meta
             name="description"
-            content="JB Sushi Experience es una serie de exclusivos eventos de sushi en Buenos Aires, que ofrecen auténticas experiencias gastronómicas en diferentes lugares de la ciudad. Disfruta de sushi de alta calidad y un ambiente único en cada uno de nuestros eventos. ¡Unite a nosotros y hacé de tu próxima experiencia gastronómica algo inolvidable con JB Sushi Experience!"
+            content="JB Sushi Experience es una serie de exclusivos eventos de sushi en Buenos Aires, que ofrecen auténticas experiencias gastronómicas en diferentes lugares de la ciudad. Disfrutá de sushi de alta calidad y un ambiente único en cada uno de nuestros eventos. ¡Unite a nosotros y hacé de tu próxima experiencia gastronómica algo inolvidable con JB Sushi Experience!"
         />
 
         <!-- Title -->
@@ -39,13 +39,13 @@
                 <form action="https://formspree.io/f/xdovwkvd" method="POST" data-multi-step>
                     <div class="form-page pag1" data-step>
                         <div class="form-titles">
-                            <h2>JB Sushi Experience x Fermentador</h2>
-                            <h3>DOMINGO 30/04</h3>
+                            <h2>JB Sushi Experience</h2>
+                            <h3><i class="bi bi-calendar-check"></i> DOMINGO 30/04 <br> <i class="bi bi-geo"></i> Mendez de Andes 1400</h3>
                         </div>
                         <label for="mesa">Tipo de experiencia:</label>
                         <select id="mesa" name="mesa">
-                            <option value="mesa-comun" data-price="8000">Mesa Común - $<span class="price">8000</span></option>
-                            <option value="barra-premium" data-price="10000">Barra Premium - $<span class="price">10000</span></option>
+                            <option value="jb_experience" data-price="5900">JB Experience - $<span class="price">5900</span></option>
+                            <option value="omakase" data-price="8900">Omakase Experience - $<span class="price">8900</span></option>
                         </select>
 
                         <label for="hora">Horario de la reserva:</label>
@@ -63,14 +63,6 @@
                             <option value="23:00">23:00</option>
                         </select>
 
-                        <!-- <div class="counter">
-                            <button type="button" class="counter-btn counter-down">-</button>
-                            <input type="number" class="counter-input" min="1" max="30" value="1" />
-                            <button type="button" class="counter-btn counter-up">+</button>
-                        </div>
-
-                        <input type="number" id="comensales" name="comensales" placeholder="Cantidad de comensales:" /> -->
-
                         <label for="comensales">Cantidad de comensales:</label>
                         <select id="comensales" name="comensales">
                             <option value="1">1</option>
@@ -83,15 +75,6 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
                         </select>
 
                         <div class="button-box">
@@ -130,43 +113,51 @@
                             <h3>Personalizá tu experiencia</h3>
                         </div>
 
-                        <label for="entrada">Elegí una entrada:</label>
-                        <select id="entrada" name="entrada">
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
+                        <div class="personalizacion-menu">
+                            <div class="platos-area">
+                                <label for="entrada">Elegí una entrada:</label>
+                                <select id="entrada" name="entrada">
+                                    <option value="harumakis">Classic Harumakis</option>
+                                    <option value="harumakis_spicy">Harumakis & Spicy Hot Sauce (Picante)</option>
+                                    <option value="cazuela">Cazuela de Ceviche</option>
+                                </select>
 
-                        <label for="principal">Plato principal:</label>
-                        <select id="principal" name="principal">
-                            <option value="1">Opción 1</option>
-                        </select>
+                                <label for="principal">Plato principal:</label>
+                                <select id="principal" name="principal">
+                                    <option value="sushi">Sushi de Autor (16u.)</option>
+                                </select>
 
-                        <label for="postre">Elegí un postre:</label>
-                        <select id="postre" name="postre">
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
-
-                        <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
-                        <div class="checkboxes-requerimientos">
-                            <div class="checkbox-option">
-                                <label for="vegano">Vegano/a</label>
-                                <input type="checkbox" id="vegano" class="checkbox" name="vegano" value="vegano" />
+                                <label for="postre">Elegí un postre:</label>
+                                <select id="postre" name="postre">
+                                    <option value="chocotorta">Chocotorta</option>
+                                    <option value="tiramisú">Tiramisú</option>
+                                    <option value="lincoln Pie">Lincoln Pie</option>
+                                </select>
                             </div>
-                            <div class="checkbox-option">
-                                <label for="vegetariano">Vegetariano/a</label>
-                                <input type="checkbox" id="vegetariano" class="checkbox" name="vegetariano" value="vegetariano" />
-                            </div>
-                            <div class="checkbox-option">
-                                <label for="celiaco">Celíaco/a</label>
-                                <input type="checkbox" id="celiaco" class="checkbox" name="celiaco" value="celiaco" />
+
+                            <div class="requerimientos-area">
+                                <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
+                                <div class="checkboxes-requerimientos">
+                                    <div class="checkbox-option">
+                                        <label for="vegano">Vegano/a</label>
+                                        <input type="checkbox" id="vegano" name="requerimientos_${i}" value="vegano" />
+                                    </div>
+                                    <div class="checkbox-option">
+                                        <label for="vegetariano">Vegetariano/a</label>
+                                        <input type="checkbox" id="vegetariano" name="requerimientos_${i}" value="vegetariano" />
+                                    </div>
+                                    <div class="checkbox-option">
+                                        <label for="celiaco">Celíaco/a</label>
+                                        <input type="checkbox" id="celiaco" name="requerimientos_${i}" value="celiaco" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="otros-requerimientos">Otras aclaraciones:</label>
+                                    <textarea id="otros-requerimientos" name="otros-requerimientos_${i}"></textarea>
+                                </div>
                             </div>
                         </div>
-
-                        <label for="otros requerimientos">Otras aclaraciones:</label>
-                        <textarea id="otros requerimientos" name="otros requerimientos"></textarea>
                         <div class="button-box">
                             <button type="button" class="btn btn-back" data-previous>
                                 <i class="bi bi-arrow-left-circle"></i>
@@ -181,13 +172,14 @@
 
                     <div class="form-page pag4" data-step>
                         <h2>Resumen</h2>
-                        <p>Fecha del Evento: Domingo 30/04</p>
-                        <p>Horario de la reserva: <span id="horario-reserva"></span></p>
-                        <p>Cantidad de comensales: <span id="cant-comensales-review"></span></p>
-                        <p>Tipo de experiencia: <span id="tipo-experiencia-review"></span></p>
-                        <p>Monto total a pagar: <span id="total-due-review"></span></p>
+                        <p class="fecha-review">Fecha del Evento: <span>Domingo 30/04</span></p>
+                        <p class="horario-review">Horario de la reserva: <span id="horario-reserva"></span></p>
+                        <p class="direccion-review">Dirección: <span id="direccion">Mendez de Andes 1400, Caballito, CABA</span></p>
+                        <p class="comensales-review">Cantidad de comensales: <span id="cant-comensales-review"></span></p>
+                        <p class="experiencia-review">Tipo de experiencia: <span id="tipo-experiencia-review"></span></p>
+                        <p class="pagar-review">Monto total a pagar: <span id="total-due-review"></span></p>
                         <input type="hidden" id="total-due" name="total-a-pagar" value="" />
-                        <p>
+                        <p class="desc-formato-pago">
                             La totalidad de la reserva deberá ser abonada de manera anticipada (dentro de los 5 días posteriores a la
                             confirmación de la reserva). Nos contactaremos por WhatsApp para coordinar el pago.
                         </p>
@@ -196,7 +188,7 @@
                                 <i class="bi bi-arrow-left-circle"></i>
                                 <span class="btn-text">Atrás</span>
                             </button>
-                            <input type="submit" class="btn" value="Finalizar Reserva" />
+                            <input type="submit" class="btn btn-last" value="Reservar" />
                         </div>
                     </div>
                 </form>
@@ -204,11 +196,12 @@
         </main>
 
         <footer>
-            <p>Contactanos en <a href="mailto:contacto@jbsushiexperience.com">jb_sushi@hotmail.com</a></p>
+            <p>Contactanos en:</p>
 
             <div class="media-link-icons">
                 <a href="https://www.instagram.com/jb_sushi/" target="_blank"><i class="bi bi-instagram"></i></a>
                 <a href="https://api.whatsapp.com/send?phone=5491136178130" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                <a href="mailto:jb_sushi@hotmail.com"><i class="bi bi-envelope"></i></a>
             </div>
         </footer>
 

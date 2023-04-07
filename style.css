@@ -60,12 +60,16 @@ main {
     color: #333;
     line-height: 1.2;
     display: none;
-    animation: fade 300ms ease-in-out forwards;
+    animation: shrink-disappear 300ms ease-in-out forwards;
 }
 
 .form-page.active {
     display: block;
-    animation: slide 300ms 150ms ease-in-out both;
+    animation: expand-appear 300ms 150ms ease-in-out both;
+}
+
+.pag4, .pag2{
+    max-width: 445px;
 }
 
 .form-titles {
@@ -112,6 +116,11 @@ textarea,
     resize: none;
 }
 
+/* .price{
+    font-weight: normal;
+    font-style: italic;
+} */
+
 .checkboxes-requerimientos {
     display: flex;
     justify-content: space-around;
@@ -123,6 +132,10 @@ textarea,
 }
 
 .checkbox {
+}
+
+.platos-area.hide, .vertical-separator-line.hide{
+    display: none;
 }
 
 .button-box {
@@ -251,69 +264,39 @@ footer .bi:hover {
     background-color: #333;
 }
 
-@keyframes slide {
+.confirmation-messages{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes expand-appear {
     0% {
-        transform: translateX(200%);
+        /* transform: scale(.7); */
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        /* transform: scale(1); */
         opacity: 1;
     }
 }
 
-@keyframes fade {
+@keyframes shrink-disappear {
     0% {
-        transform: scale(1);
+        /* transform: scale(1); */
         opacity: 1;
     }
-    50% {
+    /* 50% {
         transform: scale(0.75);
         opacity: 0;
-    }
+    } */
     100% {
+        /* transform: scale(.7); */
         opacity: 0;
-        transform: scale(0);
     }
 }
 
-/*
-.counter {
-    display: flex;
-    align-items: center;
-  }
-  
-  .counter-btn {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    height: 25px;
-    width: 25px;
-    margin: 0 5px;
-    outline: none;
-    transition: background-color 0.2s ease;
-  }
-  
-  .counter-btn:hover {
-    background-color: #eee;
-  }
-  
-  .counter-input {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
-    height: 25px;
-    margin: 0 5px;
-    padding: 5px;
-    text-align: center;
-    width: 50px;
-  }
-   */
-
+/* Media Queries */
 @media screen and (min-width: 520px) {
     .btn {
         letter-spacing: 2px;
@@ -352,16 +335,20 @@ footer .bi:hover {
     .personalizacion-menu {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
     }
 
     .platos-area {
         width: 280px;
-        padding-right: 40px;
-        border-right: 1px solid #ddd;
     }
+
+    .vertical-separator-line{
+        border-right: 1px solid #ddd;
+        margin: 0 40px;
+    }
+
     .requerimientos-area {
         width: 280px;
-        padding-left: 40px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

@@ -2,7 +2,6 @@ const multiStepForm = document.querySelector("[data-multi-step]");
 let formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
 
 const comensalesSelect = document.getElementById("comensales");
-const formContainer = document.querySelector(".form-container");
 const cantComensalesReview = document.getElementById("cant-comensales-review");
 const tipoExperienciaReview = document.getElementById("tipo-experiencia-review");
 const mesa = document.getElementById("mesa");
@@ -14,12 +13,9 @@ const firstNextButton = document.getElementById("first-next-btn");
 const horarioReserva = document.getElementById("hora");
 const horarioReservaReview = document.getElementById("horario-reserva");
 
-
 let horario = horarioReserva.value;
 let numComensales = comensalesSelect.value;
-// let expPrice = selectedOption.getAttribute("data-price");
-// console.log(expPrice);
-// let totalDue = numComensales * expPrice;
+let mesaSelectedOption = mesa.options[mesa.selectedIndex];
 
 multiStepForm.addEventListener("keydown", (event) => {
     if (event.keyCode === 13) {
@@ -29,6 +25,7 @@ multiStepForm.addEventListener("keydown", (event) => {
 });
 
 mesa.addEventListener("change", () => {
+    disablePlatosArea();
     outputReview();
 });
 
@@ -67,10 +64,12 @@ comensalesSelect.addEventListener("change", () => {
                                 <label for="postre">Elegí un postre:</label>
                                 <select id="postre" name="postre">
                                     <option value="chocotorta">Chocotorta</option>
-                                    <option value="tiramisú">Tiramisú</option>
+                                    <option value="tiramisu">Tiramisú</option>
                                     <option value="lincoln">Lincoln Pie</option>
                                 </select>
                             </div>
+
+                            <div class="vertical-separator-line"></div>
 
                             <div class="requerimientos-area">
                                 <label for="checkboxes-requerimientos">Seleccioná en caso que aplique: </label>
@@ -111,6 +110,8 @@ comensalesSelect.addEventListener("change", () => {
     }
 
     formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
+
+    disablePlatosArea();
 });
 
 let currentStep = formSteps.findIndex((step) => {
@@ -147,6 +148,14 @@ formSteps.forEach((step) => {
     });
 });
 
+// multiStepForm.addEventListener("submit", (e) => {
+//     // e.preventDefault();
+//     setTimeout(() => {
+//         multiStepForm.submit();
+//     }, 2000);
+//     window.location.href = "pages/confirmation.html";
+// });
+
 firstNextButton.addEventListener("click", () => {
     outputReview();
 });
@@ -159,9 +168,9 @@ function showCurrentStep() {
 
 function outputReview() {
     numComensales = comensalesSelect.value;
-const selectedOption = mesa.options[mesa.selectedIndex];
-    expPrice = selectedOption.getAttribute("data-price");
-    expName = mesa.innerText;
+    mesaSelectedOption = mesa.options[mesa.selectedIndex];
+    expPrice = mesaSelectedOption.getAttribute("data-price");
+    expName = mesaSelectedOption.textContent.replace(/\s-\s\$\d+/, ""); // Gets the text of the selected option element and removes the text inside the span element.
     totalDue = numComensales * expPrice;
     horario = horarioReserva.value;
 
@@ -170,4 +179,26 @@ const selectedOption = mesa.options[mesa.selectedIndex];
     tipoExperienciaReview.textContent = `${expName} ($${expPrice}/persona)`;
     totalDueReview.textContent = `$${totalDue}`;
     totalDueSubmitted.value = `$${totalDue}`;
+}
+
+function disablePlatosArea() {
+    mesaSelectedOption = mesa.options[mesa.selectedIndex];
+    const platosArea = document.querySelectorAll(".platos-area");
+    const verticalSeparatorLine = document.querySelectorAll(".vertical-separator-line");
+
+    if (mesaSelectedOption.value == "omakase") {
+        platosArea.forEach((platosArea) => {
+            platosArea.classList.add("hide");
+        });
+        verticalSeparatorLine.forEach((verticalSeparatorLine) => {
+            verticalSeparatorLine.classList.add("hide");
+        });
+    } else {
+        platosArea.forEach((platosArea) => {
+            platosArea.classList.remove("hide");
+        });
+        verticalSeparatorLine.forEach((verticalSeparatorLine) => {
+            verticalSeparatorLine.classList.remove("hide");
+        });
+    }
 }

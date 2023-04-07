@@ -50,19 +50,19 @@ comensalesSelect.addEventListener("change", () => {
                         <div class="personalizacion-menu">
                             <div class="platos-area">
                                 <label for="entrada">Elegí una entrada:</label>
-                                <select id="entrada" name="entrada">
+                                <select id="entrada" name="entrada_${i}">
                                     <option value="harumakis">Classic Harumakis</option>
                                     <option value="harumakis_spicy">Harumakis & Spicy Hot Sauce (Picante)</option>
                                     <option value="cazuela">Cazuela de Ceviche</option>
                                 </select>
 
                                 <label for="principal">Plato principal:</label>
-                                <select id="principal" name="principal">
+                                <select id="principal" name="principal_${i}">
                                     <option value="sushi">Sushi de Autor (16u.)</option>
                                 </select>
 
                                 <label for="postre">Elegí un postre:</label>
-                                <select id="postre" name="postre">
+                                <select id="postre" name="postre_${i}">
                                     <option value="chocotorta">Chocotorta</option>
                                     <option value="tiramisu">Tiramisú</option>
                                     <option value="lincoln">Lincoln Pie</option>
@@ -76,15 +76,15 @@ comensalesSelect.addEventListener("change", () => {
                                 <div class="checkboxes-requerimientos">
                                     <div class="checkbox-option">
                                         <label for="vegano">Vegano/a</label>
-                                        <input type="checkbox" id="vegano" name="requerimientos_${i}" value="vegano" />
+                                        <input type="checkbox" id="vegano" name="vegano_${i}" value="vegano" />
                                     </div>
                                     <div class="checkbox-option">
                                         <label for="vegetariano">Vegetariano/a</label>
-                                        <input type="checkbox" id="vegetariano" name="requerimientos_${i}" value="vegetariano" />
+                                        <input type="checkbox" id="vegetariano" name="vegetariano_${i}" value="vegetariano" />
                                     </div>
                                     <div class="checkbox-option">
                                         <label for="celiaco">Celíaco/a</label>
-                                        <input type="checkbox" id="celiaco" name="requerimientos_${i}" value="celiaco" />
+                                        <input type="checkbox" id="celiaco" name="celiaco_${i}" value="celiaco" />
                                     </div>
                                 </div>
 

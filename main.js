@@ -148,14 +148,6 @@ formSteps.forEach((step) => {
     });
 });
 
-// multiStepForm.addEventListener("submit", (e) => {
-//     // e.preventDefault();
-//     setTimeout(() => {
-//         multiStepForm.submit();
-//     }, 2000);
-//     window.location.href = "pages/confirmation.html";
-// });
-
 firstNextButton.addEventListener("click", () => {
     outputReview();
 });
